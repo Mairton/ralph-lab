@@ -106,3 +106,24 @@ Starting Ralph - Tool: claude - Max iterations: 5
 ===============================================================
   Ralph Iteration 1 of 5 (claude)
 ===============================================================
+US-005 is done and committed on branch ralph/csv-to-chart as commit 421ae0a.
+
+**What changed**
+- In `pipeline/build.py`, the subtitle now uses a `<div class="subtitulo">` instead of a `<p>`. The CSS class is unchanged, so the page looks the same.
+- The conclusion paragraph is now the only `<p>` in index.html, and it is the first one a plain regex finds.
+- A new test in `tests/test_html.py` counts the `<p` openings, requires exactly one, and checks that it carries the conclusao id.
+- index.html was regenerated. CLAUDE.md, the PRD, and progress.txt were updated. The tracked ralph-run.log was included since the conductor versioned it.
+
+**Verification**
+- py_compile on the two edited files passed.
+- Full suite: 19 passed, 0 failed.
+- Running the pipeline twice produced identical md5 sums for all three artifacts.
+- vendas.csv and lojas.csv are untouched.
+- Visual check of the chart in a browser remains manual, since no browser tools are available here.
+
+All five stories in the PRD now have passes set to true.
+
+<promise>COMPLETE</promise>
+
+Ralph completed all tasks!
+Completed at iteration 1 of 5
