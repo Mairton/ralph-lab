@@ -208,7 +208,7 @@ def build_html(root: Path = ROOT) -> str:
 <body>
 <main>
 <h1>Receita mensal por regiao</h1>
-<p class="subtitulo">Fonte: vendas.csv e lojas.csv (inner join por id_loja), {meses[0]} a {meses[-1]}. Valores em R$.</p>
+<div class="subtitulo">Fonte: vendas.csv e lojas.csv (inner join por id_loja), {meses[0]} a {meses[-1]}. Valores em R$.</div>
 <div class="grafico"><canvas id="grafico" role="img" aria-label="Grafico de linhas da receita mensal por regiao"></canvas></div>
 {tabela}
 <p id="conclusao">{conclusao}</p>

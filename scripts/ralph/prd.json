@@ -114,7 +114,7 @@
         "Typecheck passes (python -m py_compile pipeline/build.py tests/test_html.py)"
       ],
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "notes": "Historia adicionada pelo condutor apos a primeira execucao do laco (4 iteracoes, COMPLETE): a US-003 passou nos testes, mas a pagina ficou com um <p> de subtitulo antes da conclusao."
     }
   ]

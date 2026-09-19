@@ -8,7 +8,8 @@ Started: sáb 19 set 2026 19:23:29 -03
 - Comparacoes de receita: `pytest.approx(valor, abs=0.5)`.
 - Typecheck = `python -m py_compile <arquivos .py alterados>`.
 - vendas.csv e lojas.csv sao fonte intocavel; confirmar com `git status --porcelain vendas.csv lojas.csv` antes de commitar.
-- Nao commitar `ralph-run.log` (log do loop, esta no .gitignore).
+- `ralph-run.log` passou a ser versionado pelo condutor (evidencia do laco); commitar junto com o restante.
+- index.html: a conclusao e o UNICO `<p>` da pagina; textos auxiliares (subtitulo etc.) usam `<div>`/`<span>`.
 ---
 ## 2026-09-19 19:24 - US-001
 - Implementado `pipeline/__init__.py` e `pipeline/build.py` com `build_join(root)`: le vendas.csv/lojas.csv (receita_brl como float), `merge(how="inner", on="id_loja")`, grava vendas_lojas.csv na raiz (420 linhas de dados) e imprime resumo no stdout (423 entrada; 3 orfas id_loja=999 R$ 8120.00; loja 108 Batel/PR sem vendas).
@@ -57,4 +58,15 @@ Started: sáb 19 set 2026 19:23:29 -03
   - Teste de ponta a ponta com `subprocess.run([sys.executable, "pipeline/build.py"], cwd=ROOT)` funciona sem conftest e valida o `__main__` de verdade; os outros testes chamam `build_all` direto.
   - Determinismo: md5 dos artefatos e a checagem mais barata; nenhum timestamp/ordem aleatoria entrou no pipeline.
   - Todas as 4 historias do PRD estao com passes=true; o repo esta pronto para o autograder.
+---
+## 2026-09-19 19:40 - US-005
+- `build_html` em `pipeline/build.py`: subtitulo trocado de `<p class="subtitulo">` para `<div class="subtitulo">` (a classe CSS foi mantida); a conclusao passa a ser o unico `<p>` de index.html e o primeiro `<p[^>]*>` encontrado por regex e o `id="conclusao"`.
+- `tests/test_html.py`: novo `test_html_conclusao_e_unico_p` (conta `<p[^>]*>` == 1, exige `id="conclusao"` na primeira ocorrencia e `html.count("<p") == 1`).
+- index.html regenerado com `python pipeline/build.py`; CLAUDE.md registra a regra do `<p>` unico.
+- Arquivos: pipeline/build.py, tests/test_html.py, index.html, CLAUDE.md, scripts/ralph/prd.json, scripts/ralph/progress.txt, ralph-run.log
+- Verificacao: `python -m py_compile pipeline/build.py tests/test_html.py` OK; `python -m pytest -q` = 19 passed; pipeline rodado 2x -> md5 identicos; `git status --porcelain vendas.csv lojas.csv` vazio. Verificacao visual continua MANUAL (sem browser).
+- **Learnings for future iterations:**
+  - Validadores externos simples leem o primeiro `<p>` da pagina; qualquer texto auxiliar em index.html deve usar `<div>`/`<span>`, nunca `<p>`.
+  - Como o HTML e gerado por f-string em build.py, trocar a tag nao afeta o CSS (`.subtitulo` continua valendo) nem o determinismo.
+  - `html.count("<p")` e seguro aqui porque a pagina nao tem `<pre>`/`<path>`; se um dia entrar, usar so a regex `<p[^>]*>` com fronteira (`<p[\s>]`).
 ---

@@ -91,3 +91,11 @@ def test_html_estrutura_basica(html):
     assert "<table" in html
     for regiao in REGIOES_ESPERADAS:
         assert regiao in html
+
+
+def test_html_conclusao_e_unico_p(html):
+    # O validador externo pode ler o primeiro <p> da pagina: ele deve ser a conclusao.
+    aberturas = re.findall(r"<p[^>]*>", html)
+    assert len(aberturas) == 1
+    assert 'id="conclusao"' in aberturas[0]
+    assert html.count("<p") == 1
