@@ -1,0 +1,421 @@
+id_venda,data,id_loja,categoria,unidades,receita_brl,nome_loja,regiao,uf,gerente
+V00001,2026-01-13,101,Bebidas,102,4406.88,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00002,2026-01-18,101,Bebidas,32,1116.42,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00003,2026-01-02,101,Higiene,44,1068.75,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00004,2026-01-03,101,Higiene,149,3481.39,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00005,2026-01-08,101,Limpeza,131,2618.74,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00006,2026-01-02,101,Limpeza,43,888.01,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00007,2026-01-08,101,Mercearia,164,2351.21,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00008,2026-01-02,101,Mercearia,180,2898.82,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00009,2026-01-02,101,Padaria,167,2236.75,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00010,2026-01-28,101,Padaria,76,886.85,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00011,2026-01-05,102,Bebidas,54,1995.37,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00012,2026-01-10,102,Bebidas,158,5580.41,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00013,2026-01-06,102,Higiene,163,4408.95,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00014,2026-01-21,102,Higiene,46,1178.17,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00015,2026-01-18,102,Limpeza,68,1343.86,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00016,2026-01-20,102,Limpeza,36,745.84,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00017,2026-01-18,102,Mercearia,72,1135.53,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00018,2026-01-15,102,Mercearia,129,2173.95,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00019,2026-01-12,102,Padaria,169,2446.28,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00020,2026-01-06,102,Padaria,96,1182.24,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00021,2026-01-10,103,Bebidas,82,2868.17,Moema,Sudeste,SP,Carla Nunes
+V00022,2026-01-11,103,Bebidas,154,5991.16,Moema,Sudeste,SP,Carla Nunes
+V00023,2026-01-03,103,Higiene,134,3191.02,Moema,Sudeste,SP,Carla Nunes
+V00024,2026-01-06,103,Higiene,50,1259.28,Moema,Sudeste,SP,Carla Nunes
+V00025,2026-01-16,103,Limpeza,107,1997.28,Moema,Sudeste,SP,Carla Nunes
+V00026,2026-01-22,103,Limpeza,127,2299.34,Moema,Sudeste,SP,Carla Nunes
+V00027,2026-01-19,103,Mercearia,39,655.34,Moema,Sudeste,SP,Carla Nunes
+V00028,2026-01-12,103,Mercearia,100,1516.95,Moema,Sudeste,SP,Carla Nunes
+V00029,2026-01-26,103,Padaria,172,2254.81,Moema,Sudeste,SP,Carla Nunes
+V00030,2026-01-03,103,Padaria,136,1596.65,Moema,Sudeste,SP,Carla Nunes
+V00031,2026-01-22,104,Bebidas,89,3444.65,Tijuca,Sudeste,RJ,Diego Prado
+V00032,2026-01-23,104,Bebidas,36,1251.95,Tijuca,Sudeste,RJ,Diego Prado
+V00033,2026-01-22,104,Higiene,99,2575.35,Tijuca,Sudeste,RJ,Diego Prado
+V00034,2026-01-13,104,Higiene,134,3188.28,Tijuca,Sudeste,RJ,Diego Prado
+V00035,2026-01-15,104,Limpeza,108,1946.4,Tijuca,Sudeste,RJ,Diego Prado
+V00036,2026-01-04,104,Limpeza,110,2062.06,Tijuca,Sudeste,RJ,Diego Prado
+V00037,2026-01-25,104,Mercearia,146,2056.7,Tijuca,Sudeste,RJ,Diego Prado
+V00038,2026-01-08,104,Mercearia,93,1335.29,Tijuca,Sudeste,RJ,Diego Prado
+V00039,2026-01-28,104,Padaria,121,1545.3,Tijuca,Sudeste,RJ,Diego Prado
+V00040,2026-01-15,104,Padaria,147,1731.35,Tijuca,Sudeste,RJ,Diego Prado
+V00041,2026-01-05,105,Bebidas,122,4809.2,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00042,2026-01-09,105,Bebidas,130,5513.02,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00043,2026-01-22,105,Higiene,126,3539.61,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00044,2026-01-05,105,Higiene,117,3266.18,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00045,2026-01-08,105,Limpeza,41,770.25,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00046,2026-01-27,105,Limpeza,79,1419.63,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00047,2026-01-10,105,Mercearia,170,2475.54,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00048,2026-01-18,105,Mercearia,21,302.84,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00049,2026-01-11,105,Padaria,114,1535.74,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00050,2026-01-17,105,Padaria,52,713.94,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00051,2026-01-24,106,Bebidas,178,7195.15,Meireles,Nordeste,CE,Fabio Lima
+V00052,2026-01-28,106,Bebidas,33,1271.76,Meireles,Nordeste,CE,Fabio Lima
+V00053,2026-01-13,106,Higiene,163,3985.89,Meireles,Nordeste,CE,Fabio Lima
+V00054,2026-01-21,106,Higiene,120,2722.1,Meireles,Nordeste,CE,Fabio Lima
+V00055,2026-01-03,106,Limpeza,122,2222.8,Meireles,Nordeste,CE,Fabio Lima
+V00056,2026-01-04,106,Limpeza,73,1467.45,Meireles,Nordeste,CE,Fabio Lima
+V00057,2026-01-04,106,Mercearia,107,1730.49,Meireles,Nordeste,CE,Fabio Lima
+V00058,2026-01-18,106,Mercearia,20,320.84,Meireles,Nordeste,CE,Fabio Lima
+V00059,2026-01-20,106,Padaria,45,655.05,Meireles,Nordeste,CE,Fabio Lima
+V00060,2026-01-07,106,Padaria,26,305.37,Meireles,Nordeste,CE,Fabio Lima
+V00061,2026-01-21,107,Bebidas,177,6686.03,Moinhos,Sul,RS,Gisele Kunz
+V00062,2026-01-20,107,Bebidas,84,3635.26,Moinhos,Sul,RS,Gisele Kunz
+V00063,2026-01-04,107,Higiene,113,2819.82,Moinhos,Sul,RS,Gisele Kunz
+V00064,2026-01-15,107,Higiene,144,4051.12,Moinhos,Sul,RS,Gisele Kunz
+V00065,2026-01-03,107,Limpeza,142,2885.02,Moinhos,Sul,RS,Gisele Kunz
+V00066,2026-01-11,107,Limpeza,56,1031.43,Moinhos,Sul,RS,Gisele Kunz
+V00067,2026-01-23,107,Mercearia,87,1366.13,Moinhos,Sul,RS,Gisele Kunz
+V00068,2026-01-07,107,Mercearia,61,966.72,Moinhos,Sul,RS,Gisele Kunz
+V00069,2026-01-23,107,Padaria,155,1965.03,Moinhos,Sul,RS,Gisele Kunz
+V00070,2026-01-25,107,Padaria,159,2296.8,Moinhos,Sul,RS,Gisele Kunz
+V00071,2026-02-21,101,Bebidas,155,5739.94,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00072,2026-02-09,101,Bebidas,43,1755.0,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00073,2026-02-06,101,Higiene,152,3693.0,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00074,2026-02-18,101,Higiene,111,2972.37,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00075,2026-02-11,101,Limpeza,158,3442.16,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00076,2026-02-26,101,Limpeza,77,1613.98,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00077,2026-02-27,101,Mercearia,69,1170.47,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00078,2026-02-08,101,Mercearia,122,2038.44,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00079,2026-02-12,101,Padaria,71,935.53,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00080,2026-02-26,101,Padaria,27,396.54,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00081,2026-02-07,102,Bebidas,91,3520.45,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00082,2026-02-15,102,Bebidas,174,7531.92,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00083,2026-02-12,102,Higiene,109,3041.03,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00084,2026-02-08,102,Higiene,40,936.01,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00085,2026-02-07,102,Limpeza,140,2644.41,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00086,2026-02-20,102,Limpeza,143,3005.11,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00087,2026-02-21,102,Mercearia,20,314.12,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00088,2026-02-03,102,Mercearia,108,1829.37,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00089,2026-02-26,102,Padaria,50,721.56,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00090,2026-02-06,102,Padaria,71,926.53,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00091,2026-02-11,103,Bebidas,131,5462.28,Moema,Sudeste,SP,Carla Nunes
+V00092,2026-02-24,103,Bebidas,42,1755.93,Moema,Sudeste,SP,Carla Nunes
+V00093,2026-02-24,103,Higiene,121,3011.31,Moema,Sudeste,SP,Carla Nunes
+V00094,2026-02-06,103,Higiene,41,1086.07,Moema,Sudeste,SP,Carla Nunes
+V00095,2026-02-19,103,Limpeza,52,938.45,Moema,Sudeste,SP,Carla Nunes
+V00096,2026-02-05,103,Limpeza,139,3047.21,Moema,Sudeste,SP,Carla Nunes
+V00097,2026-02-16,103,Mercearia,176,2999.4,Moema,Sudeste,SP,Carla Nunes
+V00098,2026-02-18,103,Mercearia,109,1576.17,Moema,Sudeste,SP,Carla Nunes
+V00099,2026-02-26,103,Padaria,53,614.19,Moema,Sudeste,SP,Carla Nunes
+V00100,2026-02-05,103,Padaria,46,607.43,Moema,Sudeste,SP,Carla Nunes
+V00101,2026-02-07,104,Bebidas,131,5707.96,Tijuca,Sudeste,RJ,Diego Prado
+V00102,2026-02-07,104,Bebidas,74,2550.48,Tijuca,Sudeste,RJ,Diego Prado
+V00103,2026-02-25,104,Higiene,94,2361.24,Tijuca,Sudeste,RJ,Diego Prado
+V00104,2026-02-18,104,Higiene,170,4087.94,Tijuca,Sudeste,RJ,Diego Prado
+V00105,2026-02-02,104,Limpeza,127,2801.64,Tijuca,Sudeste,RJ,Diego Prado
+V00106,2026-02-22,104,Limpeza,110,2461.37,Tijuca,Sudeste,RJ,Diego Prado
+V00107,2026-02-17,104,Mercearia,169,2872.65,Tijuca,Sudeste,RJ,Diego Prado
+V00108,2026-02-17,104,Mercearia,127,2164.65,Tijuca,Sudeste,RJ,Diego Prado
+V00109,2026-02-17,104,Padaria,53,700.76,Tijuca,Sudeste,RJ,Diego Prado
+V00110,2026-02-15,104,Padaria,150,1736.98,Tijuca,Sudeste,RJ,Diego Prado
+V00111,2026-02-25,105,Bebidas,66,2638.76,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00112,2026-02-16,105,Bebidas,58,2078.56,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00113,2026-02-18,105,Higiene,178,4715.54,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00114,2026-02-17,105,Higiene,35,841.63,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00115,2026-02-26,105,Limpeza,155,3204.37,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00116,2026-02-02,105,Limpeza,47,1048.29,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00117,2026-02-02,105,Mercearia,83,1211.51,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00118,2026-02-18,105,Mercearia,45,711.66,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00119,2026-02-03,105,Padaria,27,376.7,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00120,2026-02-17,105,Padaria,133,1670.74,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00121,2026-02-23,106,Bebidas,175,6836.47,Meireles,Nordeste,CE,Fabio Lima
+V00122,2026-02-18,106,Bebidas,90,3464.76,Meireles,Nordeste,CE,Fabio Lima
+V00123,2026-02-08,106,Higiene,142,3572.72,Meireles,Nordeste,CE,Fabio Lima
+V00124,2026-02-09,106,Higiene,153,4195.07,Meireles,Nordeste,CE,Fabio Lima
+V00125,2026-02-07,106,Limpeza,163,3643.29,Meireles,Nordeste,CE,Fabio Lima
+V00126,2026-02-04,106,Limpeza,134,2491.36,Meireles,Nordeste,CE,Fabio Lima
+V00127,2026-02-03,106,Mercearia,120,1867.46,Meireles,Nordeste,CE,Fabio Lima
+V00128,2026-02-07,106,Mercearia,81,1256.24,Meireles,Nordeste,CE,Fabio Lima
+V00129,2026-02-25,106,Padaria,97,1360.77,Meireles,Nordeste,CE,Fabio Lima
+V00130,2026-02-21,106,Padaria,59,857.06,Meireles,Nordeste,CE,Fabio Lima
+V00131,2026-02-05,107,Bebidas,113,4018.09,Moinhos,Sul,RS,Gisele Kunz
+V00132,2026-02-04,107,Bebidas,139,5043.77,Moinhos,Sul,RS,Gisele Kunz
+V00133,2026-02-06,107,Higiene,121,3323.9,Moinhos,Sul,RS,Gisele Kunz
+V00134,2026-02-14,107,Higiene,77,1774.0,Moinhos,Sul,RS,Gisele Kunz
+V00135,2026-02-14,107,Limpeza,151,3007.76,Moinhos,Sul,RS,Gisele Kunz
+V00136,2026-02-03,107,Limpeza,70,1377.89,Moinhos,Sul,RS,Gisele Kunz
+V00137,2026-02-18,107,Mercearia,113,1574.66,Moinhos,Sul,RS,Gisele Kunz
+V00138,2026-02-01,107,Mercearia,137,2131.14,Moinhos,Sul,RS,Gisele Kunz
+V00139,2026-02-20,107,Padaria,118,1484.53,Moinhos,Sul,RS,Gisele Kunz
+V00140,2026-02-03,107,Padaria,95,1250.13,Moinhos,Sul,RS,Gisele Kunz
+V00141,2026-03-26,101,Bebidas,48,2090.8,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00142,2026-03-04,101,Bebidas,78,3387.63,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00143,2026-03-02,101,Higiene,41,970.74,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00144,2026-03-05,101,Higiene,66,1564.63,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00145,2026-03-22,101,Limpeza,128,2833.5,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00146,2026-03-18,101,Limpeza,86,1713.94,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00147,2026-03-23,101,Mercearia,151,2424.58,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00148,2026-03-02,101,Mercearia,103,1463.06,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00149,2026-03-03,101,Padaria,66,850.15,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00150,2026-03-21,101,Padaria,88,1278.0,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00151,2026-03-03,102,Bebidas,42,1756.25,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00152,2026-03-03,102,Bebidas,175,7408.48,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00153,2026-03-15,102,Higiene,87,2378.1,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00154,2026-03-18,102,Higiene,22,530.8,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00155,2026-03-09,102,Limpeza,126,2837.54,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00156,2026-03-17,102,Limpeza,179,3320.97,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00157,2026-03-06,102,Mercearia,81,1415.21,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00158,2026-03-07,102,Mercearia,87,1222.69,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00159,2026-03-17,102,Padaria,99,1339.64,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00160,2026-03-17,102,Padaria,72,896.25,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00161,2026-03-26,103,Bebidas,65,2390.05,Moema,Sudeste,SP,Carla Nunes
+V00162,2026-03-02,103,Bebidas,24,1047.55,Moema,Sudeste,SP,Carla Nunes
+V00163,2026-03-17,103,Higiene,23,509.75,Moema,Sudeste,SP,Carla Nunes
+V00164,2026-03-17,103,Higiene,161,4514.53,Moema,Sudeste,SP,Carla Nunes
+V00165,2026-03-15,103,Limpeza,141,2697.65,Moema,Sudeste,SP,Carla Nunes
+V00166,2026-03-21,103,Limpeza,47,995.7,Moema,Sudeste,SP,Carla Nunes
+V00167,2026-03-18,103,Mercearia,130,2130.38,Moema,Sudeste,SP,Carla Nunes
+V00168,2026-03-10,103,Mercearia,120,2111.48,Moema,Sudeste,SP,Carla Nunes
+V00169,2026-03-11,103,Padaria,75,1099.79,Moema,Sudeste,SP,Carla Nunes
+V00170,2026-03-23,103,Padaria,70,992.83,Moema,Sudeste,SP,Carla Nunes
+V00171,2026-03-12,104,Bebidas,55,2092.45,Tijuca,Sudeste,RJ,Diego Prado
+V00172,2026-03-01,104,Bebidas,33,1391.0,Tijuca,Sudeste,RJ,Diego Prado
+V00173,2026-03-09,104,Higiene,38,983.47,Tijuca,Sudeste,RJ,Diego Prado
+V00174,2026-03-03,104,Higiene,130,2996.49,Tijuca,Sudeste,RJ,Diego Prado
+V00175,2026-03-22,104,Limpeza,117,2602.19,Tijuca,Sudeste,RJ,Diego Prado
+V00176,2026-03-23,104,Limpeza,92,1921.78,Tijuca,Sudeste,RJ,Diego Prado
+V00177,2026-03-06,104,Mercearia,95,1333.25,Tijuca,Sudeste,RJ,Diego Prado
+V00178,2026-03-01,104,Mercearia,60,893.75,Tijuca,Sudeste,RJ,Diego Prado
+V00179,2026-03-11,104,Padaria,87,1103.62,Tijuca,Sudeste,RJ,Diego Prado
+V00180,2026-03-02,104,Padaria,160,2008.85,Tijuca,Sudeste,RJ,Diego Prado
+V00181,2026-03-06,105,Bebidas,99,3590.7,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00182,2026-03-03,105,Bebidas,20,747.71,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00183,2026-03-21,105,Higiene,141,3349.94,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00184,2026-03-25,105,Higiene,71,1673.48,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00185,2026-03-27,105,Limpeza,21,385.6,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00186,2026-03-19,105,Limpeza,42,782.28,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00187,2026-03-10,105,Mercearia,30,461.3,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00188,2026-03-03,105,Mercearia,97,1579.57,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00189,2026-03-28,105,Padaria,169,2464.77,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00190,2026-03-23,105,Padaria,59,803.82,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00191,2026-03-11,106,Bebidas,172,6518.87,Meireles,Nordeste,CE,Fabio Lima
+V00192,2026-03-24,106,Bebidas,146,5200.51,Meireles,Nordeste,CE,Fabio Lima
+V00193,2026-03-02,106,Higiene,178,4626.17,Meireles,Nordeste,CE,Fabio Lima
+V00194,2026-03-24,106,Higiene,151,3909.75,Meireles,Nordeste,CE,Fabio Lima
+V00195,2026-03-17,106,Limpeza,149,2771.86,Meireles,Nordeste,CE,Fabio Lima
+V00196,2026-03-27,106,Limpeza,149,3089.99,Meireles,Nordeste,CE,Fabio Lima
+V00197,2026-03-19,106,Mercearia,24,409.0,Meireles,Nordeste,CE,Fabio Lima
+V00198,2026-03-02,106,Mercearia,78,1106.63,Meireles,Nordeste,CE,Fabio Lima
+V00199,2026-03-04,106,Padaria,54,732.17,Meireles,Nordeste,CE,Fabio Lima
+V00200,2026-03-18,106,Padaria,116,1646.58,Meireles,Nordeste,CE,Fabio Lima
+V00201,2026-03-21,107,Bebidas,32,1285.24,Moinhos,Sul,RS,Gisele Kunz
+V00202,2026-03-16,107,Bebidas,156,6343.94,Moinhos,Sul,RS,Gisele Kunz
+V00203,2026-03-26,107,Higiene,87,1920.12,Moinhos,Sul,RS,Gisele Kunz
+V00204,2026-03-17,107,Higiene,37,985.43,Moinhos,Sul,RS,Gisele Kunz
+V00205,2026-03-17,107,Limpeza,157,2883.68,Moinhos,Sul,RS,Gisele Kunz
+V00206,2026-03-16,107,Limpeza,36,778.32,Moinhos,Sul,RS,Gisele Kunz
+V00207,2026-03-28,107,Mercearia,84,1425.94,Moinhos,Sul,RS,Gisele Kunz
+V00208,2026-03-25,107,Mercearia,87,1284.46,Moinhos,Sul,RS,Gisele Kunz
+V00209,2026-03-21,107,Padaria,72,882.6,Moinhos,Sul,RS,Gisele Kunz
+V00210,2026-03-13,107,Padaria,137,1794.79,Moinhos,Sul,RS,Gisele Kunz
+V00211,2026-04-22,101,Bebidas,39,1511.27,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00212,2026-04-20,101,Bebidas,93,3858.22,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00213,2026-04-05,101,Higiene,70,1576.72,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00214,2026-04-24,101,Higiene,104,2454.96,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00215,2026-04-05,101,Limpeza,97,2037.02,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00216,2026-04-16,101,Limpeza,23,467.13,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00217,2026-04-04,101,Mercearia,88,1549.17,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00218,2026-04-10,101,Mercearia,75,1234.61,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00219,2026-04-15,101,Padaria,152,1889.93,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00220,2026-04-18,101,Padaria,139,1942.52,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00221,2026-04-03,102,Bebidas,71,2638.42,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00222,2026-04-15,102,Bebidas,141,4845.65,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00223,2026-04-15,102,Higiene,39,1055.8,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00224,2026-04-07,102,Higiene,88,2148.91,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00225,2026-04-05,102,Limpeza,39,811.31,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00226,2026-04-12,102,Limpeza,154,2958.72,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00227,2026-04-21,102,Mercearia,53,857.7,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00228,2026-04-04,102,Mercearia,150,2240.45,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00229,2026-04-16,102,Padaria,113,1385.43,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00230,2026-04-01,102,Padaria,120,1391.94,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00231,2026-04-13,103,Bebidas,145,5897.89,Moema,Sudeste,SP,Carla Nunes
+V00232,2026-04-14,103,Bebidas,97,3987.5,Moema,Sudeste,SP,Carla Nunes
+V00233,2026-04-04,103,Higiene,108,2630.19,Moema,Sudeste,SP,Carla Nunes
+V00234,2026-04-25,103,Higiene,104,2294.31,Moema,Sudeste,SP,Carla Nunes
+V00235,2026-04-04,103,Limpeza,106,2340.97,Moema,Sudeste,SP,Carla Nunes
+V00236,2026-04-24,103,Limpeza,70,1502.01,Moema,Sudeste,SP,Carla Nunes
+V00237,2026-04-03,103,Mercearia,94,1394.48,Moema,Sudeste,SP,Carla Nunes
+V00238,2026-04-28,103,Mercearia,120,1843.45,Moema,Sudeste,SP,Carla Nunes
+V00239,2026-04-14,103,Padaria,170,1999.96,Moema,Sudeste,SP,Carla Nunes
+V00240,2026-04-09,103,Padaria,90,1282.83,Moema,Sudeste,SP,Carla Nunes
+V00241,2026-04-22,104,Bebidas,46,1595.76,Tijuca,Sudeste,RJ,Diego Prado
+V00242,2026-04-05,104,Bebidas,93,3741.59,Tijuca,Sudeste,RJ,Diego Prado
+V00243,2026-04-14,104,Higiene,83,2323.8,Tijuca,Sudeste,RJ,Diego Prado
+V00244,2026-04-25,104,Higiene,150,3597.46,Tijuca,Sudeste,RJ,Diego Prado
+V00245,2026-04-14,104,Limpeza,115,2508.85,Tijuca,Sudeste,RJ,Diego Prado
+V00246,2026-04-21,104,Limpeza,27,592.64,Tijuca,Sudeste,RJ,Diego Prado
+V00247,2026-04-18,104,Mercearia,122,2119.96,Tijuca,Sudeste,RJ,Diego Prado
+V00248,2026-04-03,104,Mercearia,160,2342.92,Tijuca,Sudeste,RJ,Diego Prado
+V00249,2026-04-14,104,Padaria,32,464.23,Tijuca,Sudeste,RJ,Diego Prado
+V00250,2026-04-05,104,Padaria,135,1820.84,Tijuca,Sudeste,RJ,Diego Prado
+V00251,2026-04-18,105,Bebidas,93,3609.61,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00252,2026-04-14,105,Bebidas,52,1862.76,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00253,2026-04-09,105,Higiene,107,2544.0,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00254,2026-04-08,105,Higiene,86,2110.27,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00255,2026-04-22,105,Limpeza,97,1970.44,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00256,2026-04-21,105,Limpeza,120,2220.69,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00257,2026-04-17,105,Mercearia,61,863.11,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00258,2026-04-15,105,Mercearia,147,2348.91,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00259,2026-04-15,105,Padaria,105,1544.42,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00260,2026-04-07,105,Padaria,129,1543.71,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00261,2026-04-11,106,Bebidas,82,2875.07,Meireles,Nordeste,CE,Fabio Lima
+V00262,2026-04-08,106,Bebidas,162,5680.59,Meireles,Nordeste,CE,Fabio Lima
+V00263,2026-04-19,106,Higiene,114,2694.1,Meireles,Nordeste,CE,Fabio Lima
+V00264,2026-04-24,106,Higiene,71,1951.39,Meireles,Nordeste,CE,Fabio Lima
+V00265,2026-04-24,106,Limpeza,125,2476.83,Meireles,Nordeste,CE,Fabio Lima
+V00266,2026-04-09,106,Limpeza,154,2919.04,Meireles,Nordeste,CE,Fabio Lima
+V00267,2026-04-16,106,Mercearia,106,1776.1,Meireles,Nordeste,CE,Fabio Lima
+V00268,2026-04-12,106,Mercearia,91,1462.46,Meireles,Nordeste,CE,Fabio Lima
+V00269,2026-04-17,106,Padaria,52,713.32,Meireles,Nordeste,CE,Fabio Lima
+V00270,2026-04-08,106,Padaria,75,886.22,Meireles,Nordeste,CE,Fabio Lima
+V00271,2026-04-15,107,Bebidas,118,4483.73,Moinhos,Sul,RS,Gisele Kunz
+V00272,2026-04-28,107,Bebidas,130,5624.12,Moinhos,Sul,RS,Gisele Kunz
+V00273,2026-04-14,107,Higiene,25,570.73,Moinhos,Sul,RS,Gisele Kunz
+V00274,2026-04-16,107,Higiene,141,3945.28,Moinhos,Sul,RS,Gisele Kunz
+V00275,2026-04-27,107,Limpeza,20,365.48,Moinhos,Sul,RS,Gisele Kunz
+V00276,2026-04-15,107,Limpeza,155,3435.72,Moinhos,Sul,RS,Gisele Kunz
+V00277,2026-04-08,107,Mercearia,83,1400.62,Moinhos,Sul,RS,Gisele Kunz
+V00278,2026-04-22,107,Mercearia,59,852.28,Moinhos,Sul,RS,Gisele Kunz
+V00279,2026-04-24,107,Padaria,47,683.04,Moinhos,Sul,RS,Gisele Kunz
+V00280,2026-04-25,107,Padaria,137,1615.51,Moinhos,Sul,RS,Gisele Kunz
+V00281,2026-05-05,101,Bebidas,30,1026.39,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00282,2026-05-02,101,Bebidas,79,3129.12,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00283,2026-05-21,101,Higiene,97,2710.66,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00284,2026-05-14,101,Higiene,84,2123.99,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00285,2026-05-10,101,Limpeza,48,883.43,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00286,2026-05-07,101,Limpeza,154,3481.03,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00287,2026-05-26,101,Mercearia,119,1768.86,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00288,2026-05-18,101,Mercearia,173,2398.55,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00289,2026-05-09,101,Padaria,97,1426.71,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00290,2026-05-08,101,Padaria,100,1358.26,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00291,2026-05-18,102,Bebidas,141,5527.15,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00292,2026-05-14,102,Bebidas,83,2861.69,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00293,2026-05-07,102,Higiene,98,2194.1,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00294,2026-05-21,102,Higiene,147,4038.05,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00295,2026-05-08,102,Limpeza,127,2325.81,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00296,2026-05-08,102,Limpeza,128,2881.62,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00297,2026-05-11,102,Mercearia,146,2042.73,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00298,2026-05-13,102,Mercearia,127,1937.38,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00299,2026-05-10,102,Padaria,70,807.91,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00300,2026-05-16,102,Padaria,149,1748.63,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00301,2026-05-27,103,Bebidas,71,2638.45,Moema,Sudeste,SP,Carla Nunes
+V00302,2026-05-08,103,Bebidas,69,2511.1,Moema,Sudeste,SP,Carla Nunes
+V00303,2026-05-10,103,Higiene,87,2323.59,Moema,Sudeste,SP,Carla Nunes
+V00304,2026-05-16,103,Higiene,47,1310.39,Moema,Sudeste,SP,Carla Nunes
+V00305,2026-05-08,103,Limpeza,176,3316.17,Moema,Sudeste,SP,Carla Nunes
+V00306,2026-05-22,103,Limpeza,144,2877.8,Moema,Sudeste,SP,Carla Nunes
+V00307,2026-05-05,103,Mercearia,34,595.43,Moema,Sudeste,SP,Carla Nunes
+V00308,2026-05-01,103,Mercearia,120,1688.31,Moema,Sudeste,SP,Carla Nunes
+V00309,2026-05-02,103,Padaria,172,2059.55,Moema,Sudeste,SP,Carla Nunes
+V00310,2026-05-15,103,Padaria,35,423.82,Moema,Sudeste,SP,Carla Nunes
+V00311,2026-05-03,104,Bebidas,100,4116.09,Tijuca,Sudeste,RJ,Diego Prado
+V00312,2026-05-06,104,Bebidas,62,2314.32,Tijuca,Sudeste,RJ,Diego Prado
+V00313,2026-05-02,104,Higiene,154,4099.66,Tijuca,Sudeste,RJ,Diego Prado
+V00314,2026-05-13,104,Higiene,99,2585.84,Tijuca,Sudeste,RJ,Diego Prado
+V00315,2026-05-15,104,Limpeza,115,2623.18,Tijuca,Sudeste,RJ,Diego Prado
+V00316,2026-05-03,104,Limpeza,63,1162.48,Tijuca,Sudeste,RJ,Diego Prado
+V00317,2026-05-14,104,Mercearia,91,1289.56,Tijuca,Sudeste,RJ,Diego Prado
+V00318,2026-05-25,104,Mercearia,51,817.04,Tijuca,Sudeste,RJ,Diego Prado
+V00319,2026-05-25,104,Padaria,73,929.76,Tijuca,Sudeste,RJ,Diego Prado
+V00320,2026-05-14,104,Padaria,99,1400.89,Tijuca,Sudeste,RJ,Diego Prado
+V00321,2026-05-16,105,Bebidas,42,1456.05,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00322,2026-05-15,105,Bebidas,70,2641.86,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00323,2026-05-24,105,Higiene,69,1658.09,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00324,2026-05-14,105,Higiene,141,3135.2,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00325,2026-05-25,105,Limpeza,83,1821.75,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00326,2026-05-02,105,Limpeza,123,2227.8,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00327,2026-05-02,105,Mercearia,138,1945.93,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00328,2026-05-03,105,Mercearia,85,1241.89,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00329,2026-05-09,105,Padaria,175,2205.88,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00330,2026-05-20,105,Padaria,105,1531.38,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00331,2026-05-23,106,Bebidas,31,1137.41,Meireles,Nordeste,CE,Fabio Lima
+V00332,2026-05-10,106,Bebidas,101,4341.0,Meireles,Nordeste,CE,Fabio Lima
+V00333,2026-05-20,106,Higiene,20,529.39,Meireles,Nordeste,CE,Fabio Lima
+V00334,2026-05-08,106,Higiene,36,799.15,Meireles,Nordeste,CE,Fabio Lima
+V00335,2026-05-15,106,Limpeza,47,952.88,Meireles,Nordeste,CE,Fabio Lima
+V00336,2026-05-14,106,Limpeza,118,2577.03,Meireles,Nordeste,CE,Fabio Lima
+V00337,2026-05-16,106,Mercearia,146,2098.15,Meireles,Nordeste,CE,Fabio Lima
+V00338,2026-05-24,106,Mercearia,66,916.97,Meireles,Nordeste,CE,Fabio Lima
+V00339,2026-05-25,106,Padaria,97,1372.82,Meireles,Nordeste,CE,Fabio Lima
+V00340,2026-05-11,106,Padaria,58,780.87,Meireles,Nordeste,CE,Fabio Lima
+V00341,2026-05-26,107,Bebidas,101,3896.32,Moinhos,Sul,RS,Gisele Kunz
+V00342,2026-05-07,107,Bebidas,172,6011.51,Moinhos,Sul,RS,Gisele Kunz
+V00343,2026-05-08,107,Higiene,120,3199.37,Moinhos,Sul,RS,Gisele Kunz
+V00344,2026-05-02,107,Higiene,124,2783.36,Moinhos,Sul,RS,Gisele Kunz
+V00345,2026-05-11,107,Limpeza,143,2954.26,Moinhos,Sul,RS,Gisele Kunz
+V00346,2026-05-04,107,Limpeza,61,1389.99,Moinhos,Sul,RS,Gisele Kunz
+V00347,2026-05-03,107,Mercearia,38,565.43,Moinhos,Sul,RS,Gisele Kunz
+V00348,2026-05-16,107,Mercearia,73,1038.88,Moinhos,Sul,RS,Gisele Kunz
+V00349,2026-05-05,107,Padaria,134,1617.94,Moinhos,Sul,RS,Gisele Kunz
+V00350,2026-05-22,107,Padaria,126,1637.36,Moinhos,Sul,RS,Gisele Kunz
+V00351,2026-06-28,101,Bebidas,80,3304.46,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00352,2026-06-10,101,Bebidas,51,2121.99,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00353,2026-06-09,101,Higiene,95,2257.32,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00354,2026-06-09,101,Higiene,115,2714.7,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00355,2026-06-06,101,Limpeza,70,1406.72,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00356,2026-06-10,101,Limpeza,82,1564.69,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00357,2026-06-03,101,Mercearia,168,2450.24,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00358,2026-06-08,101,Mercearia,121,1794.29,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00359,2026-06-21,101,Padaria,149,1967.42,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00360,2026-06-02,101,Padaria,45,612.48,Asa Norte,Centro-Oeste,DF,Marina Alves
+V00361,2026-06-27,102,Bebidas,46,1575.16,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00362,2026-06-12,102,Bebidas,79,3332.64,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00363,2026-06-08,102,Higiene,30,822.63,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00364,2026-06-20,102,Higiene,50,1117.93,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00365,2026-06-03,102,Limpeza,169,3190.04,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00366,2026-06-06,102,Limpeza,115,2352.96,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00367,2026-06-25,102,Mercearia,134,2168.35,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00368,2026-06-20,102,Mercearia,21,299.61,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00369,2026-06-02,102,Padaria,178,2249.75,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00370,2026-06-02,102,Padaria,114,1437.32,Taguatinga,Centro-Oeste,DF,Bruno Sato
+V00371,2026-06-02,103,Bebidas,72,3146.31,Moema,Sudeste,SP,Carla Nunes
+V00372,2026-06-07,103,Bebidas,173,7120.02,Moema,Sudeste,SP,Carla Nunes
+V00373,2026-06-14,103,Higiene,22,595.44,Moema,Sudeste,SP,Carla Nunes
+V00374,2026-06-10,103,Higiene,115,2666.16,Moema,Sudeste,SP,Carla Nunes
+V00375,2026-06-26,103,Limpeza,39,737.96,Moema,Sudeste,SP,Carla Nunes
+V00376,2026-06-03,103,Limpeza,146,3012.93,Moema,Sudeste,SP,Carla Nunes
+V00377,2026-06-13,103,Mercearia,124,1767.04,Moema,Sudeste,SP,Carla Nunes
+V00378,2026-06-18,103,Mercearia,160,2312.8,Moema,Sudeste,SP,Carla Nunes
+V00379,2026-06-13,103,Padaria,43,585.22,Moema,Sudeste,SP,Carla Nunes
+V00380,2026-06-10,103,Padaria,89,1141.99,Moema,Sudeste,SP,Carla Nunes
+V00381,2026-06-02,104,Bebidas,98,3740.61,Tijuca,Sudeste,RJ,Diego Prado
+V00382,2026-06-12,104,Bebidas,99,4086.79,Tijuca,Sudeste,RJ,Diego Prado
+V00383,2026-06-28,104,Higiene,126,3099.69,Tijuca,Sudeste,RJ,Diego Prado
+V00384,2026-06-13,104,Higiene,113,2937.71,Tijuca,Sudeste,RJ,Diego Prado
+V00385,2026-06-01,104,Limpeza,123,2327.56,Tijuca,Sudeste,RJ,Diego Prado
+V00386,2026-06-14,104,Limpeza,131,2933.83,Tijuca,Sudeste,RJ,Diego Prado
+V00387,2026-06-13,104,Mercearia,49,833.9,Tijuca,Sudeste,RJ,Diego Prado
+V00388,2026-06-15,104,Mercearia,167,2882.24,Tijuca,Sudeste,RJ,Diego Prado
+V00389,2026-06-02,104,Padaria,61,728.09,Tijuca,Sudeste,RJ,Diego Prado
+V00390,2026-06-26,104,Padaria,161,1928.13,Tijuca,Sudeste,RJ,Diego Prado
+V00391,2026-06-20,105,Bebidas,121,4240.54,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00392,2026-06-06,105,Bebidas,114,4697.24,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00393,2026-06-06,105,Higiene,57,1378.33,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00394,2026-06-03,105,Higiene,153,3534.63,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00395,2026-06-25,105,Limpeza,47,931.5,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00396,2026-06-27,105,Limpeza,70,1358.74,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00397,2026-06-16,105,Mercearia,31,546.09,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00398,2026-06-21,105,Mercearia,100,1406.55,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00399,2026-06-23,105,Padaria,119,1403.74,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00400,2026-06-06,105,Padaria,178,2442.57,Boa Viagem,Nordeste,PE,Elisa Rocha
+V00401,2026-06-20,106,Bebidas,76,3047.6,Meireles,Nordeste,CE,Fabio Lima
+V00402,2026-06-06,106,Bebidas,70,2945.41,Meireles,Nordeste,CE,Fabio Lima
+V00403,2026-06-13,106,Higiene,164,3835.32,Meireles,Nordeste,CE,Fabio Lima
+V00404,2026-06-12,106,Higiene,152,3497.28,Meireles,Nordeste,CE,Fabio Lima
+V00405,2026-06-24,106,Limpeza,51,951.33,Meireles,Nordeste,CE,Fabio Lima
+V00406,2026-06-18,106,Limpeza,69,1249.9,Meireles,Nordeste,CE,Fabio Lima
+V00407,2026-06-11,106,Mercearia,29,476.51,Meireles,Nordeste,CE,Fabio Lima
+V00408,2026-06-15,106,Mercearia,50,768.04,Meireles,Nordeste,CE,Fabio Lima
+V00409,2026-06-25,106,Padaria,160,2277.89,Meireles,Nordeste,CE,Fabio Lima
+V00410,2026-06-10,106,Padaria,98,1332.5,Meireles,Nordeste,CE,Fabio Lima
+V00411,2026-06-13,107,Bebidas,169,6179.99,Moinhos,Sul,RS,Gisele Kunz
+V00412,2026-06-15,107,Bebidas,114,4382.67,Moinhos,Sul,RS,Gisele Kunz
+V00413,2026-06-20,107,Higiene,65,1442.56,Moinhos,Sul,RS,Gisele Kunz
+V00414,2026-06-15,107,Higiene,145,3610.47,Moinhos,Sul,RS,Gisele Kunz
+V00415,2026-06-15,107,Limpeza,178,3878.69,Moinhos,Sul,RS,Gisele Kunz
+V00416,2026-06-13,107,Limpeza,65,1426.25,Moinhos,Sul,RS,Gisele Kunz
+V00417,2026-06-12,107,Mercearia,47,663.57,Moinhos,Sul,RS,Gisele Kunz
+V00418,2026-06-26,107,Mercearia,130,1984.65,Moinhos,Sul,RS,Gisele Kunz
+V00419,2026-06-22,107,Padaria,133,1746.81,Moinhos,Sul,RS,Gisele Kunz
+V00420,2026-06-05,107,Padaria,30,349.5,Moinhos,Sul,RS,Gisele Kunz

@@ -1,0 +1,24 @@
+# Ralph Progress Log
+Started: sáb 19 set 2026 19:23:29 -03
+---
+## Codebase Patterns
+- Pipeline vive em `pipeline/build.py`; cada etapa e uma funcao `build_*(root: Path)` que le/grava na RAIZ do repo (`ROOT = Path(__file__).resolve().parents[1]`). Artefatos: vendas_lojas.csv, pivot_receita.csv, index.html na raiz.
+- Sempre `pd.read_csv(..., dtype={"receita_brl": float})`; o CSV tem valores como `349.5` e `1200`.
+- Testes em `tests/test_*.py` usam `ROOT = Path(__file__).resolve().parents[1]`, importam `from pipeline.build import ...` e chamam o `build_*` numa fixture `scope="module"` antes de ler o artefato. Rodar `python -m pytest -q` da raiz (rootdir = raiz, entao `pipeline` e importavel sem conftest).
+- Comparacoes de receita: `pytest.approx(valor, abs=0.5)`.
+- Typecheck = `python -m py_compile <arquivos .py alterados>`.
+- vendas.csv e lojas.csv sao fonte intocavel; confirmar com `git status --porcelain vendas.csv lojas.csv` antes de commitar.
+- Nao commitar `ralph-run.log` (log do loop, esta no .gitignore).
+---
+## 2026-09-19 19:24 - US-001
+- Implementado `pipeline/__init__.py` e `pipeline/build.py` com `build_join(root)`: le vendas.csv/lojas.csv (receita_brl como float), `merge(how="inner", on="id_loja")`, grava vendas_lojas.csv na raiz (420 linhas de dados) e imprime resumo no stdout (423 entrada; 3 orfas id_loja=999 R$ 8120.00; loja 108 Batel/PR sem vendas).
+- Criado `tests/test_join.py` com 4 testes (420 linhas, receita total 931274.06 +-0.5, colunas preservadas/acrescentadas, ausencia de 999 e 108).
+- Adicionado CLAUDE.md na raiz com as convencoes do projeto e `ralph-run.log` ao .gitignore.
+- Arquivos: pipeline/__init__.py, pipeline/build.py, tests/test_join.py, vendas_lojas.csv, CLAUDE.md, .gitignore, scripts/ralph/prd.json, scripts/ralph/progress.txt
+- Verificacao: `python -m py_compile` OK; `python -m pytest -q` = 4 passed; `git status --porcelain vendas.csv lojas.csv` vazio.
+- **Learnings for future iterations:**
+  - O join inner com pandas preserva a ordem de vendas.csv e acrescenta nome_loja, regiao, uf, gerente ao final; cabecalho resultante: id_venda,data,id_loja,categoria,unidades,receita_brl,nome_loja,regiao,uf,gerente.
+  - `to_csv(index=False)` reescreve `1200.0`/`349.5` como float (ex.: `1200.0`); isso e esperado, a soma bate em 931274.06.
+  - US-002 deve ler vendas_lojas.csv (nao vendas.csv) e derivar `mes = data.str[:7]`; regioes em ordem alfabetica saem naturalmente do pivot_table (index ordenado).
+  - Sem ferramenta de browser disponivel nesta sessao; para US-003 validar o HTML por parsing nos testes.
+---

@@ -19,14 +19,14 @@
     "linhas_lojas_csv": 8,
     "linhas_inner_join": 420,
     "vendas_orfas_id_loja_999": 3,
-    "receita_vendas_orfas": 8120.00,
+    "receita_vendas_orfas": 8120.0,
     "receita_total_inner_join": 931274.06,
     "receita_total_vendas_csv": 939394.06,
     "loja_sem_vendas": 108,
     "pivot_shape": "4 linhas x 6 meses (2026-01 a 2026-06)",
     "regiao_lider": "Sudeste",
     "receita_regiao_lider": 265077.49,
-    "tolerancia_brl": 0.50
+    "tolerancia_brl": 0.5
   },
   "userStories": [
     {
@@ -44,7 +44,7 @@
         "Typecheck passes (python -m py_compile pipeline/build.py tests/test_join.py)"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {

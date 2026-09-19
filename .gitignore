@@ -8,3 +8,4 @@ venv/
 credentials.json
 .DS_Store
 scripts/ralph/.last-branch
+ralph-run.log
