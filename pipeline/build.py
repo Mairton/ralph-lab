@@ -247,7 +247,13 @@ def build_html(root: Path = ROOT) -> str:
     return pagina
 
 
+def build_all(root: Path = ROOT) -> None:
+    """Ponto de entrada unico: regenera os tres artefatos na raiz, em sequencia e de forma deterministica."""
+    root = Path(root)
+    build_join(root)
+    build_pivot(root)
+    build_html(root)
+
+
 if __name__ == "__main__":
-    build_join(ROOT)
-    build_pivot(ROOT)
-    build_html(ROOT)
+    build_all(ROOT)

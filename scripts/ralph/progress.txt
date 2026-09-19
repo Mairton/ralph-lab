@@ -45,3 +45,16 @@ Started: sáb 19 set 2026 19:23:29 -03
   - Paleta categorica fixa por regiao (azul, laranja, verde-agua, amarelo) validada pelo dataviz skill; a tabela HTML e a "relief" exigida para as cores com contraste < 3:1.
   - O pipeline ja e deterministico e o `__main__` roda as 3 etapas; para US-004 faltam README.md (secao "Decisao de join") e tests/test_pipeline.py.
 ---
+## 2026-09-19 19:55 - US-004
+- Adicionado `build_all(root)` em `pipeline/build.py` (join -> pivot -> html em sequencia); o bloco `__main__` agora chama `build_all(ROOT)`.
+- Criado `README.md` na raiz com: visao geral do pipeline, como rodar (`python pipeline/build.py`, `python -m pytest -q`, `py_compile`), secao "Decisao de join" (inner por id_loja; 423 -> 420; 3 orfas V00421/V00422/V00423 id_loja=999 R$ 8.120,00; loja 108 Batel/PR ausente; R$ 931.274,06 vs R$ 939.394,06 do bruto), descricao dos artefatos e estrutura do repo.
+- Criado `tests/test_pipeline.py` com 4 testes: artefatos existem e nao estao vazios, determinismo (md5 igual entre duas execucoes), fontes intactas (md5 + 423/8 linhas), e execucao como script via subprocess (`python pipeline/build.py` retorna 0 e imprime o resumo).
+- CLAUDE.md: registrado `build_all` e a necessidade de manter README/testes sincronizados se a logica do join mudar.
+- Arquivos: pipeline/build.py, tests/test_pipeline.py, README.md, CLAUDE.md, scripts/ralph/prd.json, scripts/ralph/progress.txt
+- Verificacao: `python -m py_compile` em todos os .py OK; `python -m pytest -q` = 18 passed; pipeline rodado 2x -> md5 identicos dos 3 artefatos; `git status --porcelain vendas.csv lojas.csv` vazio.
+- Verificacao visual de index.html continua MANUAL (sem browser nesta sessao).
+- **Learnings for future iterations:**
+  - Teste de ponta a ponta com `subprocess.run([sys.executable, "pipeline/build.py"], cwd=ROOT)` funciona sem conftest e valida o `__main__` de verdade; os outros testes chamam `build_all` direto.
+  - Determinismo: md5 dos artefatos e a checagem mais barata; nenhum timestamp/ordem aleatoria entrou no pipeline.
+  - Todas as 4 historias do PRD estao com passes=true; o repo esta pronto para o autograder.
+---

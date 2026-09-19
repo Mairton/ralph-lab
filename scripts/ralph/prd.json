@@ -97,7 +97,7 @@
         "Typecheck passes (python -m py_compile em todos os .py do repo)"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "notes": ""
     }
   ]
