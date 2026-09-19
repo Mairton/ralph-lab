@@ -62,7 +62,7 @@
         "Typecheck passes (python -m py_compile pipeline/build.py tests/test_pivot.py)"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {

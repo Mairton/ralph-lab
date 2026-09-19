@@ -22,3 +22,14 @@ Started: sáb 19 set 2026 19:23:29 -03
   - US-002 deve ler vendas_lojas.csv (nao vendas.csv) e derivar `mes = data.str[:7]`; regioes em ordem alfabetica saem naturalmente do pivot_table (index ordenado).
   - Sem ferramenta de browser disponivel nesta sessao; para US-003 validar o HTML por parsing nos testes.
 ---
+## 2026-09-19 19:35 - US-002
+- Implementado `build_pivot(root)` em `pipeline/build.py`: le vendas_lojas.csv (receita_brl float), deriva `mes = data.str[:7]`, `pivot_table(index="regiao", columns="mes", values="receita_brl", aggfunc="sum", fill_value=0.0)`, ordena linhas/colunas, zera `columns.name` e grava pivot_receita.csv na raiz com `float_format="%.2f"`. Bloco `__main__` agora roda build_join + build_pivot.
+- Criado `tests/test_pivot.py` com 5 testes (cabecalho exato + 4x7, regioes em ordem alfabetica, formato ponto/2 casas sem R$, total 931274.06 +-0.5, Sudeste 265077.49 +-0.5 e lider).
+- Arquivos: pipeline/build.py, tests/test_pivot.py, pivot_receita.csv, scripts/ralph/prd.json, scripts/ralph/progress.txt
+- Verificacao: `python -m py_compile pipeline/build.py tests/test_pivot.py` OK; `python -m pytest -q` = 9 passed; `git status --porcelain vendas.csv lojas.csv` vazio.
+- **Learnings for future iterations:**
+  - `pivot.columns.name = None` e necessario: sem isso o `to_csv` escreve uma linha extra com o nome do eixo (`mes`) antes dos dados e o cabecalho nao fica exato.
+  - Gravar o pivot com `index=True` (a coluna de indice vira `regiao`, que e o primeiro campo do cabecalho exigido).
+  - Valores do pivot (para US-003 embutir no HTML): Sudeste lidera com 265077.49; total 931274.06; meses 2026-01..2026-06 sem lacunas (fill_value=0.0 e so seguranca).
+  - Para US-003, ler pivot_receita.csv com `pd.read_csv(..., index_col="regiao")`; colunas ja vem em ordem cronologica e servem de labels do eixo X.
+---

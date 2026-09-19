@@ -9,6 +9,7 @@ Pipeline em Python/pandas: `vendas.csv` + `lojas.csv` -> `vendas_lojas.csv` -> `
 - Ler `receita_brl` sempre com `dtype={"receita_brl": float}`; manter o nome da coluna (o autograder soma essa coluna).
 - Join e **inner** por `id_loja`: 3 vendas orfas (id_loja=999) e a loja 108 ficam fora do relatorio.
 - Arredondar apenas ao gravar CSV (`float_format="%.2f"`), nunca em somas parciais.
+- Pivot: `mes = data.str[:7]`; antes de gravar, `pivot.columns.name = None` (senao o `to_csv` escreve uma linha extra `mes`) e `index=True` para a coluna `regiao` sair primeiro.
 
 ## Comandos
 - Pipeline: `python pipeline/build.py` (da raiz)
