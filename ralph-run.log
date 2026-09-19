@@ -1,0 +1,101 @@
+Starting Ralph - Tool: claude - Max iterations: 10
+
+===============================================================
+  Ralph Iteration 1 of 10 (claude)
+===============================================================
+US-001 is implemented, verified, and committed on branch `ralph/csv-to-chart` as commit da18961.
+
+**What was built**
+- `pipeline/build.py` with `build_join(root)`: reads both CSVs with receita_brl as float, does the inner merge on id_loja, writes vendas_lojas.csv to the repo root, and prints the summary (423 in, 3 orphans with id_loja=999 totalling R$ 8120.00, loja 108 Batel/PR without sales, 420 out).
+- `tests/test_join.py` with 4 tests: 420 data rows, revenue total 931274.06 within 0.5, source columns preserved plus the four store columns, and no rows for id_loja 999 or 108.
+- A root CLAUDE.md capturing the project conventions, and ralph-run.log added to .gitignore so the loop's own log never gets committed.
+
+**Verification**
+
+| Check | Result |
+|---|---|
+| python -m py_compile | OK |
+| python -m pytest -q | 4 passed |
+| vendas_lojas.csv | 421 lines (420 data + header) |
+| git status on vendas.csv / lojas.csv | clean |
+
+**Bookkeeping**
+- prd.json now has US-001 `passes: true`; US-002, US-003, US-004 remain false.
+- progress.txt gained a Codebase Patterns section and the US-001 entry with learnings for the next iterations, including a note that no browser tooling is available so US-003 must validate the HTML by parsing.
+
+Next iteration should pick up US-002, the region-by-month pivot. It should read vendas_lojas.csv rather than the raw sales file and round only when writing the CSV.
+Iteration 1 complete. Continuing...
+
+===============================================================
+  Ralph Iteration 2 of 10 (claude)
+===============================================================
+US-002 is done and committed on `ralph/csv-to-chart`.
+
+**What was implemented**
+- Added `build_pivot(root)` to `pipeline/build.py`. It reads `vendas_lojas.csv`, derives the month as YYYY-MM from the date column, pivots revenue by region and month, and writes `pivot_receita.csv` to the repo root with two decimal places.
+- The `__main__` block now runs the join and the pivot in sequence.
+- Created `tests/test_pivot.py` with five tests: exact header and 4x7 shape, alphabetical region order, decimal format without currency symbols, total revenue, and Sudeste as the leading region.
+
+**Verification**
+- `python -m py_compile` on both changed files passed.
+- `python -m pytest -q` reports 9 passed.
+- Generated header is exactly `regiao,2026-01,...,2026-06`. Pivot total is 931274.06 and Sudeste sums to 265077.49, matching the reference values.
+- `vendas.csv` and `lojas.csv` are untouched.
+
+**Bookkeeping**
+- Marked US-002 as `passes: true` in `scripts/ralph/prd.json`.
+- Appended learnings to `scripts/ralph/progress.txt`, notably that `pivot.columns.name = None` is required to avoid an extra header line in the CSV.
+- Added that pivot gotcha to `CLAUDE.md`.
+
+Remaining stories with `passes: false`: US-003 (index.html with Chart.js chart) and US-004 (single entry point, README, full suite). The next iteration should pick up US-003.
+Iteration 2 complete. Continuing...
+
+===============================================================
+  Ralph Iteration 3 of 10 (claude)
+===============================================================
+US-003 is done and committed as `97e18ff` on branch `ralph/csv-to-chart`.
+
+**What was implemented**
+- `build_html(root)` in `pipeline/build.py` reads the pivot and writes `index.html` at the repo root. The page has the charset meta, an h1, a Chart.js line chart on `canvas#grafico` with one dataset per region and months on the X axis, data embedded as JSON (no runtime fetch), a table with the pivot plus a Total column, and a conclusion paragraph.
+- The conclusion text is computed from the data, not typed. It cites the total of R$ 931.274,06, Sudeste as leader with R$ 265.077,49, the 3 orphan sales with id_loja=999, and store 108 (Batel/PR), and explains the inner join.
+- `tests/test_html.py` adds 5 tests, including the two required ones (canvas present, conclusion of at least 300 characters, extracted with the standard HTML parser).
+- CLAUDE.md gained the HTML conventions. The PRD marks US-003 as passing and progress.txt has the new entry.
+
+**Verification**
+- py_compile clean, full suite 14 passed.
+- Running the pipeline twice yields identical checksums for all three artifacts.
+- vendas.csv and lojas.csv untouched.
+- No browser tool is available, so visual inspection of the chart is manual. This is noted in progress.txt.
+
+US-004 (README with join decision, test_pipeline.py) remains with `passes: false` for the next iteration.
+Iteration 3 complete. Continuing...
+
+===============================================================
+  Ralph Iteration 4 of 10 (claude)
+===============================================================
+US-004 is implemented and committed on `ralph/csv-to-chart`. All four stories in the PRD now have `passes: true`.
+
+**What changed in this iteration**
+
+- Added `build_all(root)` to the pipeline module. It runs join, pivot, and HTML in sequence, and the `__main__` block now calls it.
+- Created `README.md` at the root. It covers how to run the pipeline and tests, the repo layout, and a "Decisao de join" section. That section states the inner join by store id, 423 input rows against 420 output rows, the 3 orphan sales with store id 999 (R$ 8.120,00) that were dropped, the absent store 108 (Batel/PR), and the report total of R$ 931.274,06 against R$ 939.394,06 in the raw file.
+- Created `tests/test_pipeline.py` with four tests. They check that the three artifacts exist, that two runs give identical md5 hashes, that the source CSVs are untouched, and that running the script directly through a subprocess exits cleanly and prints the summary.
+- Updated CLAUDE.md with the new entry point and a note to keep the README numbers and tests in sync if the join logic ever changes.
+
+**Verification**
+
+| Check | Result |
+| --- | --- |
+| `python -m py_compile` on all .py files | OK |
+| `python -m pytest -q` | 18 passed |
+| Pipeline run twice, md5 of 3 artifacts | identical |
+| `git status` on vendas.csv and lojas.csv | clean |
+
+Visual verification of `index.html` in a browser was not possible in this session and remains manual, as noted in the progress log.
+
+Commit: `6791897 feat: US-004 - Ponto de entrada unico, README com a decisao de join e suite completa verde`
+
+<promise>COMPLETE</promise>
+
+Ralph completed all tasks!
+Completed at iteration 4 of 10
