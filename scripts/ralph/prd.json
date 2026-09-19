@@ -1,0 +1,104 @@
+{
+  "project": "ralph-lab",
+  "branchName": "ralph/csv-to-chart",
+  "description": "Do CSV ao grafico: pipeline reproduzivel em Python/pandas que faz o inner join de vendas.csv (423 vendas) com lojas.csv (8 lojas) por id_loja, salva vendas_lojas.csv (420 linhas), agrega a receita por regiao x mes em pivot_receita.csv e publica index.html com um grafico Chart.js da receita mensal por regiao e um paragrafo de conclusao. Criterio de pronto: a suite pytest inteira verde (>= 4 testes). Os dados tem duas armadilhas propositais que NAO devem ser consertadas nos CSVs de origem: 3 vendas orfas com id_loja=999 (V00421, V00422, V00423, R$ 8120.00) e a loja 108 (Batel/PR) sem nenhuma venda. Decisao: inner join, documentado no README.",
+  "constraints": [
+    "NUNCA modificar, limpar ou apagar linhas de vendas.csv e lojas.csv; eles sao a fonte e ficam intactos.",
+    "NUNCA inventar dados nem preencher a loja 108 com valores ficticios.",
+    "Ler receita_brl como numero (float), nunca como texto; o CSV tem valores como 349.5 e 1200 sem zeros a direita.",
+    "Os tres entregaveis ficam na RAIZ do repositorio: vendas_lojas.csv, pivot_receita.csv, index.html. Nao usar data/ nem web/.",
+    "Manter o nome da coluna receita_brl em vendas_lojas.csv; e a coluna que o autograder soma.",
+    "pivot_receita.csv: cabecalho EXATO 'regiao,2026-01,2026-02,2026-03,2026-04,2026-05,2026-06', 4 linhas de dados (Centro-Oeste, Nordeste, Sudeste, Sul), ponto decimal, 2 casas, sem R$ e sem separador de milhar. Arredondar so ao escrever o CSV, nunca em somas parciais.",
+    "Comando de verificacao: 'python -m pytest -q' rodado da raiz do repo. Nao ha typecheck configurado; 'Typecheck passes' significa 'python -m py_compile' nos arquivos .py alterados sem erro.",
+    "Testes em tests/test_*.py devem localizar a raiz do repo com Path(__file__).resolve().parents[1] e ler os artefatos gerados na raiz.",
+    "Nao commitar segredos (.env, .pem, credentials.json) nem __pycache__ ou .pytest_cache; ha um .gitignore.",
+    "Trabalhar em UMA historia por iteracao; commitar so com a suite verde; registrar aprendizados em scripts/ralph/progress.txt."
+  ],
+  "referenceValues": {
+    "linhas_vendas_csv": 423,
+    "linhas_lojas_csv": 8,
+    "linhas_inner_join": 420,
+    "vendas_orfas_id_loja_999": 3,
+    "receita_vendas_orfas": 8120.00,
+    "receita_total_inner_join": 931274.06,
+    "receita_total_vendas_csv": 939394.06,
+    "loja_sem_vendas": 108,
+    "pivot_shape": "4 linhas x 6 meses (2026-01 a 2026-06)",
+    "regiao_lider": "Sudeste",
+    "receita_regiao_lider": 265077.49,
+    "tolerancia_brl": 0.50
+  },
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Script de join (inner) por id_loja e testes do join",
+      "description": "Como analista, quero vendas_lojas.csv com o inner join de vendas.csv e lojas.csv por id_loja, para ter cada venda enriquecida com nome_loja, regiao, uf e gerente.",
+      "acceptanceCriteria": [
+        "Criar pipeline/__init__.py e pipeline/build.py com a funcao build_join(root) que le vendas.csv e lojas.csv com pandas (dtype={'receita_brl': float}), faz merge(how='inner', on='id_loja') e grava vendas_lojas.csv na raiz do repo com index=False",
+        "vendas_lojas.csv mantem todas as colunas de vendas.csv (nome receita_brl inalterado) e acrescenta nome_loja, regiao, uf, gerente",
+        "vendas_lojas.csv tem exatamente 420 linhas de dados (421 contando o cabecalho)",
+        "build_join imprime no stdout: vendas de entrada (423), vendas orfas descartadas (3, id_loja=999, R$ 8120.00), lojas sem vendas (1: loja 108)",
+        "vendas.csv e lojas.csv NAO sao modificados (git diff limpo nesses arquivos)",
+        "Criar tests/test_join.py com pelo menos 2 testes: test_join_tem_420_linhas (420 linhas de dados) e test_join_receita_total (soma de receita_brl = 931274.06 com tolerancia 0.5); os testes podem chamar build_join antes de ler o arquivo",
+        "python -m pytest -q passa com 0 falhas",
+        "Typecheck passes (python -m py_compile pipeline/build.py tests/test_join.py)"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Pivot receita por regiao x mes e testes do pivot",
+      "description": "Como gestor, quero pivot_receita.csv com a receita somada por regiao e mes, para comparar as regioes ao longo do semestre.",
+      "acceptanceCriteria": [
+        "Adicionar a pipeline/build.py a funcao build_pivot(root) que le vendas_lojas.csv, deriva mes = data[:7] (YYYY-MM) e faz pivot_table(index='regiao', columns='mes', values='receita_brl', aggfunc='sum')",
+        "Gravar pivot_receita.csv na raiz com o cabecalho EXATO: regiao,2026-01,2026-02,2026-03,2026-04,2026-05,2026-06",
+        "4 linhas de dados em ordem alfabetica (Centro-Oeste, Nordeste, Sudeste, Sul) e 7 colunas",
+        "Valores com ponto decimal e 2 casas (float_format='%.2f'), sem R$ e sem separador de milhar; arredondar so ao escrever",
+        "A soma das 24 celulas numericas e 931274.06 (tolerancia 0.5) e a linha Sudeste soma 265077.49 (tolerancia 0.5)",
+        "Criar tests/test_pivot.py com pelo menos 2 testes: test_pivot_cabecalho_e_forma (primeira linha do arquivo igual ao cabecalho exato; 4 linhas de dados x 7 colunas) e test_pivot_total (soma das celulas = 931274.06 com tolerancia 0.5)",
+        "python -m pytest -q passa com 0 falhas",
+        "Typecheck passes (python -m py_compile pipeline/build.py tests/test_pivot.py)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Pagina index.html com grafico Chart.js e paragrafo de conclusao",
+      "description": "Como gestor, quero uma pagina estatica index.html com um grafico da receita mensal por regiao e um paragrafo de conclusao, para apresentar o resultado sem abrir planilha.",
+      "acceptanceCriteria": [
+        "Adicionar a pipeline/build.py a funcao build_html(root) que le pivot_receita.csv e grava index.html na raiz do repo",
+        "index.html tem <canvas id=\"grafico\"></canvas> e carrega Chart.js via <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>; o grafico e de linhas com eixo X = 2026-01..2026-06 e uma serie (dataset) por regiao; os dados ficam embutidos no HTML (sem fetch em runtime)",
+        "index.html tem <p id=\"conclusao\"> com pelo menos 300 caracteres de texto em portugues, citando a receita total (R$ 931.274,06), a regiao lider (Sudeste, R$ 265.077,49) e que as 3 vendas orfas (id_loja=999) e a loja 108 (Batel/PR) nao constam do relatorio por causa do inner join",
+        "A pagina tem <meta charset=\"utf-8\">, um <h1> e uma tabela HTML simples com o conteudo do pivot (opcional, mas recomendado)",
+        "Criar tests/test_html.py com pelo menos 2 testes: test_html_tem_grafico (index.html contem '<canvas' ou '<svg') e test_html_conclusao_300_chars (texto dentro de <p id=\"conclusao\"> tem >= 300 caracteres)",
+        "python -m pytest -q passa com 0 falhas",
+        "Typecheck passes (python -m py_compile pipeline/build.py tests/test_html.py)",
+        "Sem ferramenta de browser disponivel: verificar via teste que parseia o HTML e anotar no progress.txt que a verificacao visual e manual"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Ponto de entrada unico, README com a decisao de join e suite completa verde",
+      "description": "Como condutor do loop, quero rodar 'python pipeline/build.py' e regenerar os tres artefatos de forma deterministica, e ler no README qual join foi usado e quem ficou de fora.",
+      "acceptanceCriteria": [
+        "pipeline/build.py tem um bloco if __name__ == '__main__' que roda build_join, build_pivot e build_html em sequencia a partir da raiz do repo",
+        "Rodar 'python pipeline/build.py' duas vezes gera arquivos identicos (deterministico); vendas.csv e lojas.csv continuam intactos",
+        "README.md na raiz tem a secao 'Decisao de join' dizendo: inner join por id_loja; 423 vendas de entrada, 420 de saida; 3 vendas orfas (V00421, V00422, V00423, id_loja=999, R$ 8.120,00) descartadas; loja 108 (Batel/PR) ausente do relatorio; receita total do relatorio R$ 931.274,06 contra R$ 939.394,06 do arquivo bruto",
+        "README.md explica como rodar o pipeline (python pipeline/build.py) e os testes (python -m pytest -q), e descreve a estrutura do repo",
+        "Criar tests/test_pipeline.py com pelo menos 1 teste: test_pipeline_regenera_artefatos (chama o pipeline e verifica que os tres arquivos existem na raiz)",
+        "A suite inteira 'python -m pytest -q' tem >= 4 testes coletados e passa com 0 falhas",
+        "Typecheck passes (python -m py_compile em todos os .py do repo)"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
