@@ -99,6 +99,23 @@
       "priority": 4,
       "passes": true,
       "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Conclusao como unico paragrafo <p> da pagina",
+      "description": "Como condutor do loop, quero que o <p id=\"conclusao\"> seja o UNICO elemento <p> de index.html, porque o validador externo pode ler o primeiro <p> da pagina e hoje ele encontra o subtitulo curto (89 caracteres) antes da conclusao.",
+      "acceptanceCriteria": [
+        "Em pipeline/build.py (build_html), trocar o <p class=\"subtitulo\"> por <div class=\"subtitulo\"> (ou <span>); qualquer outro texto auxiliar da pagina tambem NAO usa <p>",
+        "index.html contem exatamente UM elemento <p>, que e o <p id=\"conclusao\"> com >= 300 caracteres de texto",
+        "O primeiro <p> encontrado por uma busca simples (regex <p[^>]*>) em index.html e o de id conclusao",
+        "Adicionar em tests/test_html.py o teste test_html_conclusao_e_unico_p que conta as ocorrencias de <p e exige 1, e verifica que o primeiro <p tem id=conclusao",
+        "Regenerar index.html rodando python pipeline/build.py; vendas.csv e lojas.csv continuam intactos",
+        "python -m pytest -q passa com 0 falhas",
+        "Typecheck passes (python -m py_compile pipeline/build.py tests/test_html.py)"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": "Historia adicionada pelo condutor apos a primeira execucao do laco (4 iteracoes, COMPLETE): a US-003 passou nos testes, mas a pagina ficou com um <p> de subtitulo antes da conclusao."
     }
   ]
 }
