@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Receita mensal por regiao (2026-01 a 2026-06)</title>
+<style>
+  :root { color-scheme: light; --surface: #fcfcfb; --text: #0b0b0b; --text-2: #52514e; --grid: #e6e5e0; }
+  body { margin: 0; padding: 24px; background: var(--surface); color: var(--text);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .subtitulo { color: var(--text-2); margin: 0 0 16px; }
+  .grafico { position: relative; height: 420px; margin: 0 0 24px; }
+  table { border-collapse: collapse; width: 100%; margin: 0 0 24px; font-variant-numeric: tabular-nums; }
+  caption { text-align: left; color: var(--text-2); padding: 0 0 8px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--grid); text-align: right; }
+  th[scope="row"], thead th:first-child { text-align: left; }
+  #conclusao { max-width: 72ch; }
+</style>
+</head>
+<body>
+<main>
+<h1>Receita mensal por regiao</h1>
+<p class="subtitulo">Fonte: vendas.csv e lojas.csv (inner join por id_loja), 2026-01 a 2026-06. Valores em R$.</p>
+<div class="grafico"><canvas id="grafico" role="img" aria-label="Grafico de linhas da receita mensal por regiao"></canvas></div>
+<table id="tabela">
+<caption>Receita por regiao e mes (R$)</caption>
+<thead><tr><th scope="col">Regiao</th><th scope="col">2026-01</th><th scope="col">2026-02</th><th scope="col">2026-03</th><th scope="col">2026-04</th><th scope="col">2026-05</th><th scope="col">2026-06</th><th scope="col">Total</th></tr></thead>
+<tbody>
+<tr><th scope="row">Centro-Oeste</th><td>R$ 44.144,42</td><td>R$ 48.227,94</td><td>R$ 41.682,96</td><td>R$ 38.855,88</td><td>R$ 46.672,07</td><td>R$ 38.740,70</td><td>R$ 258.323,97</td></tr>
+<tr><th scope="row">Nordeste</th><td>R$ 46.222,85</td><td>R$ 48.042,96</td><td>R$ 45.850,70</td><td>R$ 44.053,04</td><td>R$ 35.371,50</td><td>R$ 42.321,71</td><td>R$ 261.862,76</td></tr>
+<tr><th scope="row">Sudeste</th><td>R$ 44.767,33</td><td>R$ 48.544,11</td><td>R$ 35.816,56</td><td>R$ 46.281,64</td><td>R$ 41.083,43</td><td>R$ 48.584,42</td><td>R$ 265.077,49</td></tr>
+<tr><th scope="row">Sul</th><td>R$ 27.703,36</td><td>R$ 24.985,87</td><td>R$ 19.584,52</td><td>R$ 22.976,51</td><td>R$ 25.094,42</td><td>R$ 25.665,16</td><td>R$ 146.009,84</td></tr>
+</tbody>
+</table>
+<p id="conclusao">Entre 2026-01 e 2026-06, as 4 regioes somaram uma receita total de R$ 931.274,06 em 420 vendas. A regiao lider foi Sudeste, com R$ 265.077,49 (28.5% do total), enquanto Sul ficou em ultimo, com R$ 146.009,84. O relatorio usa inner join por id_loja entre vendas.csv e lojas.csv: por isso as 3 vendas orfas (V00421, V00422, V00423, id_loja=999, R$ 8.120,00) nao constam do relatorio, e a loja 108 (Batel/PR), que nao registrou nenhuma venda, tambem nao aparece no grafico nem na tabela. Os arquivos de origem permanecem intactos; a receita bruta de vendas.csv e de R$ 939.394,06.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="dados-pivot" type="application/json">{"labels": ["2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"], "datasets": [{"label": "Centro-Oeste", "data": [44144.42, 48227.94, 41682.96, 38855.88, 46672.07, 38740.7], "borderColor": "#2a78d6", "backgroundColor": "#2a78d6", "borderWidth": 2, "pointRadius": 4, "pointHoverRadius": 6, "tension": 0, "fill": false}, {"label": "Nordeste", "data": [46222.85, 48042.96, 45850.7, 44053.04, 35371.5, 42321.71], "borderColor": "#eb6834", "backgroundColor": "#eb6834", "borderWidth": 2, "pointRadius": 4, "pointHoverRadius": 6, "tension": 0, "fill": false}, {"label": "Sudeste", "data": [44767.33, 48544.11, 35816.56, 46281.64, 41083.43, 48584.42], "borderColor": "#1baf7a", "backgroundColor": "#1baf7a", "borderWidth": 2, "pointRadius": 4, "pointHoverRadius": 6, "tension": 0, "fill": false}, {"label": "Sul", "data": [27703.36, 24985.87, 19584.52, 22976.51, 25094.42, 25665.16], "borderColor": "#eda100", "backgroundColor": "#eda100", "borderWidth": 2, "pointRadius": 4, "pointHoverRadius": 6, "tension": 0, "fill": false}]}</script>
+<script>
+(function () {
+  var dados = JSON.parse(document.getElementById("dados-pivot").textContent);
+  var brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+  new Chart(document.getElementById("grafico"), {
+    type: "line",
+    data: dados,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { position: "top", labels: { color: "#0b0b0b", usePointStyle: true } },
+        tooltip: { callbacks: { label: function (c) { return c.dataset.label + ": " + brl.format(c.parsed.y); } } }
+      },
+      scales: {
+        x: { title: { display: true, text: "Mes" }, grid: { display: false }, ticks: { color: "#52514e" } },
+        y: { title: { display: true, text: "Receita (R$)" }, beginAtZero: true,
+              grid: { color: "#e6e5e0" }, ticks: { color: "#52514e", callback: function (v) { return brl.format(v); } } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

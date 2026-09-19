@@ -80,7 +80,7 @@
         "Sem ferramenta de browser disponivel: verificar via teste que parseia o HTML e anotar no progress.txt que a verificacao visual e manual"
       ],
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {

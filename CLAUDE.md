@@ -10,6 +10,8 @@ Pipeline em Python/pandas: `vendas.csv` + `lojas.csv` -> `vendas_lojas.csv` -> `
 - Join e **inner** por `id_loja`: 3 vendas orfas (id_loja=999) e a loja 108 ficam fora do relatorio.
 - Arredondar apenas ao gravar CSV (`float_format="%.2f"`), nunca em somas parciais.
 - Pivot: `mes = data.str[:7]`; antes de gravar, `pivot.columns.name = None` (senao o `to_csv` escreve uma linha extra `mes`) e `index=True` para a coluna `regiao` sair primeiro.
+- HTML: `build_html` le `pivot_receita.csv` com `index_col="regiao"`; os dados do grafico ficam num `<script id="dados-pivot" type="application/json">` (sem fetch); os numeros da conclusao sao calculados (nunca digitados) e formatados com `formatar_brl` (R$ 931.274,06). Nao inserir timestamps: a saida deve ser deterministica.
+- Sem browser nesta sessao: validar o HTML por parsing nos testes (`html.parser`/regex); a verificacao visual e manual.
 
 ## Comandos
 - Pipeline: `python pipeline/build.py` (da raiz)

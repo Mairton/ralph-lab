@@ -33,3 +33,15 @@ Started: sáb 19 set 2026 19:23:29 -03
   - Valores do pivot (para US-003 embutir no HTML): Sudeste lidera com 265077.49; total 931274.06; meses 2026-01..2026-06 sem lacunas (fill_value=0.0 e so seguranca).
   - Para US-003, ler pivot_receita.csv com `pd.read_csv(..., index_col="regiao")`; colunas ja vem em ordem cronologica e servem de labels do eixo X.
 ---
+## 2026-09-19 19:45 - US-003
+- Implementado `build_html(root)` em `pipeline/build.py`: le pivot_receita.csv (index_col="regiao") e vendas.csv/lojas.csv (so leitura, para contar orfas e loja sem vendas), grava index.html na raiz com `<meta charset="utf-8">`, `<h1>`, `<canvas id="grafico">`, Chart.js via CDN (grafico de linhas, eixo X = 2026-01..2026-06, um dataset por regiao, dados embutidos em `<script type="application/json">`), tabela HTML do pivot com coluna Total e `<p id="conclusao">` (577 caracteres, calculados: R$ 931.274,06 total, Sudeste R$ 265.077,49, 3 orfas id_loja=999, loja 108 Batel/PR, inner join). Bloco `__main__` roda join + pivot + html.
+- Criado `tests/test_html.py` com 5 testes (canvas + script CDN, conclusao >= 300 chars via html.parser, conclusao cita numeros/excluidos, JSON embutido com labels/datasets corretos e type line, estrutura basica).
+- Arquivos: pipeline/build.py, tests/test_html.py, index.html, CLAUDE.md, scripts/ralph/prd.json, scripts/ralph/progress.txt
+- Verificacao: `python -m py_compile pipeline/build.py tests/test_html.py` OK; `python -m pytest -q` = 14 passed; rodar o pipeline duas vezes gera md5 identicos; `git status --porcelain vendas.csv lojas.csv` vazio.
+- Sem ferramenta de browser disponivel: a verificacao visual do grafico em index.html e MANUAL (abrir o arquivo no navegador com internet, pois o Chart.js vem da CDN). A validacao automatizada e por parsing do HTML.
+- **Learnings for future iterations:**
+  - `html.escape` na conclusao e necessario (o texto tem `/` e aspas potenciais); o teste extrai o texto com `html.parser`, entao entidades sao decodificadas de volta.
+  - Formatacao BRL: `f"{x:,.2f}"` e trocar `,`<->`.` (usar um placeholder); nao usar `locale`, que depende da maquina.
+  - Paleta categorica fixa por regiao (azul, laranja, verde-agua, amarelo) validada pelo dataviz skill; a tabela HTML e a "relief" exigida para as cores com contraste < 3:1.
+  - O pipeline ja e deterministico e o `__main__` roda as 3 etapas; para US-004 faltam README.md (secao "Decisao de join") e tests/test_pipeline.py.
+---
